@@ -11,6 +11,4 @@ const snake1 = new Snake('test', new Vector(1,1), 'x', game)
 
 game.addSnake(snake1)
 
-game.start()
-
-game.stop()
+game.screen.draw();
