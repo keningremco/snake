@@ -3,12 +3,13 @@ import Food from "./food.js";
 import Vector from "./vector.js";
 
 export default class Snake{
-    constructor(username, spawnpoints, icon) {
+    constructor(username, spawnpoints, icon, game) {
         this.username = username;
         this.snake = [];
         this.speed = 1;
         this.icon = icon;
         this.snake.push(new Vector(spawnpoints.x, spawnpoints.y));
+        game.screen.setCell(spawnpoints.x, spawnpoints.y, this);
     }
 
     move(keys, game) {

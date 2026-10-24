@@ -6,6 +6,7 @@ export default class Game{
         this.running = false;
         this.tickRate = 150;
         this.interval = 0;
+        this.snakes = [];
     }
     start() {
         if (this.running) return;
@@ -16,6 +17,14 @@ export default class Game{
             this.update();
             this.render();
         }, this.tickRate);
+    }
+
+    addSnake(snake) {
+        this.snakes.push(snake);
+    }
+
+    removeSnake(snake) {
+        this.snakes = this.snakes.filter(s => s !== snake);
     }
 
     update(){
