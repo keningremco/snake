@@ -37,9 +37,13 @@ export default class Game{
     }
 
     update(){
-        for (const snake of this.snakes){
+    
+        console.log("update wordt aangeroepen");
+
+        for (const snake of this.snakes) {
             snake.move(this.keys, this);
         }
+        
     }
     render(){
         this.screen.draw();
