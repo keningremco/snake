@@ -4,7 +4,7 @@ import Food from "./food.js";
 import Vector from "./vector.js";
 
 const DIRECTION = {
-    NONE: "none",
+    NONE: "left",
     UP: "up",
     DOWN: "down",
     LEFT: "left",
