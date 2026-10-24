@@ -1,12 +1,13 @@
 import CELL from "./cell.js";
 
 export default class Screen{
-    constructor(width, height){
+    constructor(width, height, element){
         this.width = width;
         this.height = height;
         this.storage = Array.from({ length: width }, () =>
             Array(height).fill(CELL.FREE)
         );
+        this.element = element;
     }
     isInside(x,y){
         if (x >= this.width || x < 0){
@@ -22,5 +23,26 @@ export default class Screen{
             return CELL.WALL;
         }
         return this.storage[x][y];
+    }
+    draw(){
+        this.element.innerHTML = "";
+        for (let y = 0; y < this.height; y++) {
+            const row = document.createElement('div')
+            row.classList.add("row");
+            for (let x = 0; x < this.width; x++) {
+                const cell = document.createElement("div");
+
+                cell.classList.add("cell");
+
+                const value = this.storage[x][y];
+
+                if (value) {
+                    cell.classList.add(value);
+                }
+
+                row.appendChild(cell);
+            }
+            this.element.appendChild(row)
+        }
     }
 }
