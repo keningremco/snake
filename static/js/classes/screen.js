@@ -1,4 +1,4 @@
-class screenClass{
+export default class screenClass{
     constructor(width, height){
         this.width = width;
         this.height = height;
@@ -17,8 +17,8 @@ class screenClass{
     }
     check(x, y){
         if (!this.isInside(x, y)){
-            return CELL.WALL
+            return CELL.WALL;
         }
-        return this.storage[x][y]
+        return this.storage[x][y];
     }
 }
