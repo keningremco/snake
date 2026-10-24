@@ -1,4 +1,4 @@
-import Screen from "./classes/screen.js";
+import Screen from "./screen.js";
 
 export default class Game{
     constructor(width, height){
