@@ -13,3 +13,7 @@
     height: 50px;
     background-color: aqua;
 }
+
+.snake{
+    border-radius: 50%;
+}
