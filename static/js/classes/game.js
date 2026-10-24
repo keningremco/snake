@@ -7,6 +7,15 @@ export default class Game{
         this.tickRate = 150;
         this.interval = 0;
         this.snakes = [];
+        this.keys = new Set();
+
+        window.addEventListener("keydown", (event) => {
+            this.keys.add(event.key.toLowerCase());
+        });
+
+        window.addEventListener("keyup", (event) => {
+            this.keys.delete(event.key.toLowerCase());
+        });
     }
     start() {
         if (this.running) return;
@@ -28,8 +37,8 @@ export default class Game{
     }
 
     update(keys){
-        for (const snake in this.snakes){
-            snake.move(keys, game);
+        for (const snake of this.snakes){
+            snake.move(this.keys, game);
         }
     }
     render(){
