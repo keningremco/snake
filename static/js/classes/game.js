@@ -39,7 +39,7 @@ export default class Game{
     update(){
     
         console.log("update wordt aangeroepen");
-        console.log(this.keys)
+        console.log("Aantal slangen:", this.snakes.length);
         for (const snake of this.snakes) {
             console.log('snake: ')
             console.log(snake)
