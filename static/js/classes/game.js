@@ -28,7 +28,7 @@ export default class Game{
     }
 
     update(keys){
-        for (const snake in snakes){
+        for (const snake in this.snakes){
             snake.move(keys, game);
         }
     }
