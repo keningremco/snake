@@ -9,18 +9,43 @@ export default class Snake{
         this.speed = 1;
         this.icon = icon;
         this.snake.push(new Vector(spawnpoints.x, spawnpoints.y));
+        this.direction = 'o';
         game.screen.setCell(spawnpoints.x, spawnpoints.y, this);
     }
 
     move(keys, game) {
+        if (keys.has("w") && this.direction !== "b") {
+            this.direction = "o";
+        } else if (keys.has("s") && this.direction !== "o") {
+            this.direction = "b";
+        } else if (keys.has("a") && this.direction !== "r") {
+            this.direction = "l";
+        } else if (keys.has("d") && this.direction !== "l") {
+            this.direction = "r";
+        }
+
         const head = this.snake[0];
         const newHead = new Vector(head.x, head.y);
 
-        if (keys.has("w")) newHead.y -= this.speed;
-        else if (keys.has("s")) newHead.y += this.speed;
-        else if (keys.has("a")) newHead.x -= this.speed;
-        else if (keys.has("d")) newHead.x += this.speed;
-        else return;
+        switch (this.direction) {
+            case "o":
+                newHead.y -= this.speed;
+                break;
+            case "b":
+                newHead.y += this.speed;
+                break;
+            case "l":
+                newHead.x -= this.speed;
+                break;
+            case "r":
+                newHead.x += this.speed;
+                break;
+            default:
+                return;
+        }
+
+        // Vanaf hier komt je bestaande botsings- en bewegingscode.
+
 
         // Controleer het doelvakje
         const target = game.screen.check(newHead.x, newHead.y);
