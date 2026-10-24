@@ -1,4 +1,4 @@
-export default class snake{
+export default class Snake{
     constructor(username, spawnpoints, icon) {
         this.username = username;
         this.snake = [];

@@ -1,4 +1,4 @@
-export default class screenClass{
+export default class Screen{
     constructor(width, height){
         this.width = width;
         this.height = height;
