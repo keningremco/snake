@@ -16,10 +16,10 @@ export default class Snake{
         const head = this.snake[0];
         const newHead = new Vector(head.x, head.y);
 
-        if (keys.includes("w")) newHead.y -= this.speed;
-        if (keys.includes("s")) newHead.y += this.speed;
-        if (keys.includes("a")) newHead.x -= this.speed;
-        if (keys.includes("d")) newHead.x += this.speed;
+        if (keys.has("w")) newHead.y -= this.speed;
+        if (keys.has("s")) newHead.y += this.speed;
+        if (keys.has("a")) newHead.x -= this.speed;
+        if (keys.has("d")) newHead.x += this.speed;
 
         const target = game.screen.check(newHead.x, newHead.y);
 
