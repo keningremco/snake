@@ -27,8 +27,10 @@ export default class Game{
         this.snakes = this.snakes.filter(s => s !== snake);
     }
 
-    update(){
-
+    update(keys){
+        for (const snake in snakes){
+            snake.move(keys, game);
+        }
     }
     render(){
         this.screen.draw();
