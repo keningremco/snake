@@ -1,6 +1,5 @@
 import CELL from "./cell.js";
 import Food from "./food.js";
-import Snake from "./snake.js";
 import Vector from "./vector.js";
 
 export default class Snake{
