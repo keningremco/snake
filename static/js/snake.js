@@ -7,4 +7,4 @@ const grid = document.getElementById('grid')
 
 const game = new Game(20, 20, grid);
 
-game.start()
+game.screen.draw()
