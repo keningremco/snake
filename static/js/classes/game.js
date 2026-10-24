@@ -38,7 +38,7 @@ export default class Game{
 
     update(){
         for (const snake of this.snakes){
-            snake.move(this.keys, game);
+            snake.move(this.keys, this);
         }
     }
     render(){
