@@ -52,8 +52,12 @@ export default class Screen{
 
                 const value = this.storage[x][y];
 
-                if (value) {
-                    cell.classList.add(value);
+                if (value instanceof Food) {
+                    cell.classList.add("food");
+                } else if (value instanceof Snake) {
+                    cell.classList.add("snake");
+                } else if (value === CELL.WALL) {
+                    cell.classList.add("wall");
                 }
 
                 row.appendChild(cell);
