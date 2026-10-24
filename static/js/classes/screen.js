@@ -24,6 +24,21 @@ export default class Screen{
         }
         return this.storage[x][y];
     }
+
+    setCell(x, y, value){
+        if (!this.isInside(x, y)) return false;
+
+        this.storage[x][y] = value;
+        return true
+    }
+
+    clearCell(x, y) {
+        if (!this.isInside(x, y)) return false;
+
+        this.storage[x][y] = CELL.FREE;
+        return true;
+    }
+
     draw(){
         this.element.innerHTML = "";
         for (let y = 0; y < this.height; y++) {
