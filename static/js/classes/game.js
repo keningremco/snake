@@ -41,6 +41,7 @@ export default class Game{
         console.log("update wordt aangeroepen");
         console.log(this.keys)
         for (const snake of this.snakes) {
+            console.log('snake: ')
             console.log(snake)
             snake.move(this.keys, this);
         }
