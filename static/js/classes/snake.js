@@ -43,9 +43,9 @@ export default class Snake{
     }
     die(game){
         for (const part of this.snake){
-            game.screen.clearCell(this.snake.x, this.snake.y);
+            game.screen.clearCell(part.x, part.y);
             const food = new Food(5)
-            game.screen.setCell(this.snake.x, this.snake.y, food)
+            game.screen.setCell(part.x, part.y, food)
         }
     }
 }
