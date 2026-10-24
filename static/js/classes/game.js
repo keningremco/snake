@@ -36,7 +36,8 @@ export default class Game{
         this.snakes = this.snakes.filter(s => s !== snake);
     }
 
-    update(keys){
+    update(){
+        console.log(this.keys);
         for (const snake of this.snakes){
             snake.move(this.keys, game);
         }
