@@ -37,7 +37,6 @@ export default class Game{
     }
 
     update(){
-        console.log(this.keys);
         for (const snake of this.snakes){
             snake.move(this.keys, game);
         }

@@ -13,6 +13,7 @@ export default class Snake{
     }
 
     move(keys, game) {
+        console.log(keys)
         const head = this.snake[0];
         const newHead = new Vector(head.x, head.y);
 
