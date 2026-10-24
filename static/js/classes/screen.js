@@ -40,6 +40,7 @@ export default class Screen{
     }
 
     draw(){
+        console.log(this.storage);
         this.element.innerHTML = "";
         for (let y = 0; y < this.height; y++) {
             const row = document.createElement('div')
