@@ -48,4 +48,5 @@ export default class Snake{
             game.screen.setCell(part.x, part.y, food)
         }
     }
+    eat(target){};
 }
