@@ -25,7 +25,7 @@ export default class Snake{
         const target = game.screen.check(newHead.x, newHead.y);
 
         if (target === CELL.WALL || target instanceof Snake) {
-            this.die();
+            this.die(game);
             return;
         }
 
