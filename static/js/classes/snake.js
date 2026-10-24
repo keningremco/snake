@@ -13,15 +13,16 @@ export default class Snake{
     }
 
     move(keys, game) {
-        console.log(keys)
         const head = this.snake[0];
         const newHead = new Vector(head.x, head.y);
 
         if (keys.has("w")) newHead.y -= this.speed;
-        if (keys.has("s")) newHead.y += this.speed;
-        if (keys.has("a")) newHead.x -= this.speed;
-        if (keys.has("d")) newHead.x += this.speed;
+        else if (keys.has("s")) newHead.y += this.speed;
+        else if (keys.has("a")) newHead.x -= this.speed;
+        else if (keys.has("d")) newHead.x += this.speed;
+        else return;
 
+        // Controleer het doelvakje
         const target = game.screen.check(newHead.x, newHead.y);
 
         if (target === CELL.WALL || target instanceof Snake) {
@@ -29,16 +30,20 @@ export default class Snake{
             return;
         }
 
-        if (target instanceof Food) {
-            this.eat(target);
-        } else if (target !== CELL.FREE) {
-            return;
-        }
+        const eating = target instanceof Food;
 
+        if (target !== CELL.FREE && !eating) return;
+
+        // Voeg de nieuwe kop toe
         this.snake.unshift(newHead);
+        game.screen.setCell(newHead.x, newHead.y, this);
 
-        if (!(target instanceof Food)) {
-            this.snake.pop();
+        // Verwijder de staart alleen als er niet gegeten wordt
+        if (!eating) {
+            const tail = this.snake.pop();
+            game.screen.clearCell(tail.x, tail.y);
+        } else {
+            this.eat(target, game);
         }
     }
     die(game){
