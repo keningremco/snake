@@ -1,3 +1,5 @@
+import CELL from "./cell.js";
+
 export default class Screen{
     constructor(width, height){
         this.width = width;
