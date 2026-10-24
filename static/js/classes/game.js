@@ -1,5 +1,5 @@
 export default class Game{
-    constructor(){
+    constructor(Screen){
         this.screen = new Screen(20, 20);
         this.running = true;
     }

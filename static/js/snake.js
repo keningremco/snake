@@ -4,6 +4,6 @@ import Vector from "./classes/vector.js";
 import Snake from "./classes/snake.js"
 
 
-const game = new Game();
+const game = new Game(Screen);
 
 console.log(game.screen.isInside(1,1))
