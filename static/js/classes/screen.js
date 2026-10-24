@@ -1,5 +1,6 @@
 import CELL from "./cell.js";
-
+import Food from "./food.js";
+import snake from "./snake.js";
 export default class Screen{
     constructor(width, height, element){
         this.width = width;
