@@ -91,7 +91,6 @@ export default class Snake {
 
     eat(target, game) {
         this.xp += target.xp;
-        game.screen.setCell(target.)
     }
 }
 
