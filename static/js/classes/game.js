@@ -1,5 +1,5 @@
 import Screen from "./screen.js";
-
+import Food from "./food.js";
 export default class Game{
     constructor(width, height, element){
         this.screen = new Screen(width, height, element);
