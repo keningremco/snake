@@ -42,7 +42,6 @@ export default class Game{
     }
 
     update(){
-        console.log(this.screen.storage);
         for (const snake of this.snakes) {
             console.log('snake: ')
             console.log(snake)
