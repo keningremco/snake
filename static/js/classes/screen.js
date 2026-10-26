@@ -58,6 +58,8 @@ export default class Screen{
                     cell.classList.add("snake");
                 } else if (value === CELL.WALL) {
                     cell.classList.add("wall");
+                } else if (value instanceof Food){
+                    cell.classList.add("food");
                 }
 
                 row.appendChild(cell);
