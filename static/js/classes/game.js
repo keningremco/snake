@@ -36,6 +36,11 @@ export default class Game{
         this.snakes = this.snakes.filter(s => s !== snake);
     }
 
+    spawnfood(x, y){
+        const apple = new Food(5,x, y);
+        this.screen.setCell(apple.location.x, apple.location.y, apple);
+    }
+
     update(){
     
         console.log("update wordt aangeroepen");
