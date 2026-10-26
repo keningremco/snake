@@ -4,7 +4,7 @@ import Food from "./food.js";
 import Vector from "./vector.js";
 
 const DIRECTION = {
-    NONE: "left",
+    NONE: "right",
     UP: "up",
     DOWN: "down",
     LEFT: "left",
@@ -18,7 +18,7 @@ export default class Snake {
         this.speed = 1;
         this.icon = icon;
         this.direction = DIRECTION.NONE;
-
+        this.xp = 0;
         this.snake.push(new Vector(spawnpoints.x, spawnpoints.y));
         game.screen.setCell(spawnpoints.x, spawnpoints.y, this);
     }
@@ -73,7 +73,6 @@ export default class Snake {
         if (!eating) {
             const tail = this.snake.pop();
             game.screen.clearCell(tail.x, tail.y);
-            // Zet de slang terug op de nieuwe kop als nodig.
             game.screen.setCell(newHead.x, newHead.y, this);
         } else {
             this.eat(target, game);
@@ -91,7 +90,8 @@ export default class Snake {
     }
 
     eat(target, game) {
-        // Voeg hier je eetlogica toe.
+        this.xp += target.xp;
+        game.screen.setCell(target.)
     }
 }
 

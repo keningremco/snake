@@ -1,5 +1,6 @@
 export default class Food{
-    constructor(xp){
+    constructor(xp, x, y){
         this.xp = xp;
+        this.location = new Vector(x, y);
     }
 }
