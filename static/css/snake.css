@@ -18,7 +18,7 @@
     border-radius: 50%;
 }
 
-.food {
+.apple {
     background: red;
     clip-path: polygon(
         50% 15%,
@@ -36,4 +36,21 @@
         20% 12%,
         35% 5%
     );
+}
+
+.body {
+    background-color: yellow;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        background-color: yellow;
+        transform: scale(1);
+    }
+    50% {
+        background-color: orange;
+        transform: scale(1.08);
+    }
 }
