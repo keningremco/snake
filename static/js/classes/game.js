@@ -45,7 +45,7 @@ export default class Game{
     }
 
     update(){
-        if (this.keys.has("d")){
+        if (this.keys.has("t")){
             const snake2 = new Snake('test', new Vector(1,1), 'z', this);
             this.screen.setCell(1, 1, snake2);
             this.addSnake(snake2);
