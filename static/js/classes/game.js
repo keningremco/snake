@@ -2,6 +2,7 @@ import Screen from "./screen.js";
 import Food, { Apple } from "./food.js";
 import Vector from "./vector.js";
 import CELL from "./cell.js"
+import Snake from "./snake.js";
 export default class Game{
     constructor(width, height, element){
         this.screen = new Screen(width, height, element);
@@ -44,6 +45,11 @@ export default class Game{
     }
 
     update(){
+        if (keys.has("d")){
+            const snake2 = new Snake('test', new Vector(1,1), 'z', this);
+            this.screen.setCell(1, 1, snake2);
+            this.addSnake(snake2);
+        }
         for (const snake of this.snakes) {
             snake.move(this.keys, this);
         }
