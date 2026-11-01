@@ -83,6 +83,7 @@ export default class Snake {
     die(game) {
         for (const part of this.snake) {
             game.screen.clearCell(part.x, part.y);
+            console.log('died');
             game.screen.setCell(part.x, part.y, new Body(5));
         }
 
