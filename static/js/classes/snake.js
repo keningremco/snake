@@ -75,6 +75,7 @@ export default class Snake {
             game.screen.clearCell(tail.x, tail.y);
             game.screen.setCell(newHead.x, newHead.y, this);
         } else {
+            console.log('eat')
             this.eat(target, game);
         }
     }
