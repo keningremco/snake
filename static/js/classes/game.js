@@ -1,6 +1,7 @@
 import Screen from "./screen.js";
 import Food, { Apple } from "./food.js";
 import Vector from "./vector.js";
+import CELL from "./cell.js"
 export default class Game{
     constructor(width, height, element){
         this.screen = new Screen(width, height, element);
