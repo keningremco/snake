@@ -14,3 +14,10 @@ export class Apple extends Food {
         this.colour = 'red';
     }
 }
+
+export class Body extends Food {
+    constructor (x, y) {
+        super(10, x, y);
+        this.colour = 'yellow';
+    }
+}

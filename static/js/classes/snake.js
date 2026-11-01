@@ -1,6 +1,6 @@
 
 import CELL from "./cell.js";
-import Food from "./food.js";
+import Food, { Body } from "./food.js";
 import Vector from "./vector.js";
 
 const DIRECTION = {
@@ -83,7 +83,7 @@ export default class Snake {
     die(game) {
         for (const part of this.snake) {
             game.screen.clearCell(part.x, part.y);
-            game.screen.setCell(part.x, part.y, new Food(5));
+            game.screen.setCell(part.x, part.y, new Body(5));
         }
 
         this.snake = [];
