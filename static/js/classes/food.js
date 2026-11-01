@@ -7,3 +7,10 @@ export default class Food{
         this.colour = 'blue';
     }
 }
+
+export class Apple extends Food {
+    constructor( x, y) {
+        super(5, x, y);
+        this.colour = 'red';
+    }
+}

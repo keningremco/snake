@@ -1,5 +1,6 @@
 import Screen from "./screen.js";
-import Food from "./food.js";
+import Food, { Apple } from "./food.js";
+import Vector from "./vector.js";
 export default class Game{
     constructor(width, height, element){
         this.screen = new Screen(width, height, element);
@@ -37,7 +38,7 @@ export default class Game{
     }
 
     spawnfood(x, y){
-        const apple = new Food(5,x, y);
+        const apple = new Apple(5,x, y);
         this.screen.setCell(apple.location.x, apple.location.y, apple);
     }
 
@@ -55,5 +56,18 @@ export default class Game{
         this.running = false;
         clearInterval(this.interval);
         this.interval = null;
+    }
+
+    generatefood(){
+        let x, y;
+
+        do {
+            x = Math.floor(Math.random() * this.screen.width);
+            y = Math.floor(Math.random() * this.screen.height);
+        } while (this.screen.check(x, y) !== CELL.FREE);
+
+        const food = new Apple(x, y);
+        this.screen.setCell(x,y,food);
+
     }
 }
