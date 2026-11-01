@@ -69,9 +69,9 @@ export default class Game{
         let x, y;
 
         do {
-            console.log('seeking')
             x = Math.floor(Math.random() * this.screen.width);
             y = Math.floor(Math.random() * this.screen.height);
+            console.log('checked: ' + x + ", " + y)
         } while (this.screen.check(x, y) !== CELL.FREE);
 
         const food = new Apple(x, y);
