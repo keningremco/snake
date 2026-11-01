@@ -1,5 +1,5 @@
 import CELL from "./cell.js";
-import Food from "./food.js";
+import Food, {Body, Apple} from "./food.js";
 import Snake from "./snake.js";
 export default class Screen{
     constructor(width, height, element){
