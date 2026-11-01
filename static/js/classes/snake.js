@@ -1,6 +1,6 @@
 
 import CELL from "./cell.js";
-import Food, { Body } from "./food.js";
+import Food, { Body, Apple } from "./food.js";
 import Vector from "./vector.js";
 
 const DIRECTION = {
