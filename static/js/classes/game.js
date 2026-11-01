@@ -69,6 +69,7 @@ export default class Game{
         let x, y;
 
         do {
+            console.log('seeking')
             x = Math.floor(Math.random() * this.screen.width);
             y = Math.floor(Math.random() * this.screen.height);
         } while (this.screen.check(x, y) !== CELL.FREE);
